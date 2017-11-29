@@ -239,8 +239,7 @@ static chunk_t build_requestExtensions(private_x509_ocsp_request_t *this)
  */
 static chunk_t build_tbsRequest(private_x509_ocsp_request_t *this)
 {
-	return asn1_wrap(ASN1_SEQUENCE, "mmmm",
-				asn1_wrap(ASN1_CONTEXT_C_0, "c", ASN1_INTEGER_0),
+	return asn1_wrap(ASN1_SEQUENCE, "mmm",
 				build_requestorName(this),
 				build_requestList(this),
 				build_requestExtensions(this));
